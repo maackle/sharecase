@@ -1,0 +1,28 @@
+extends _layout/base
+
+block content
+	.container
+		h1 profile
+
+		form(method="post")
+			.row
+				.col-md-6
+					.form-group
+						label Email address
+						input.form-control
+			.row
+				.col-md-6
+					.form-group
+						label Full Name
+						input.form-control
+			.row
+				.col-md-2.col-sm-2
+					.form-group
+						label Latitude
+						input.form-control.align-right
+				.col-md-2.col-sm-2
+					.form-group
+						label Longitude
+						input.form-control.align-right
+
+			input(type="submit", value="Update")

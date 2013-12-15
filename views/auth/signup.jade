@@ -1,0 +1,16 @@
+extends ../_layout/base
+
+block content
+	.container
+		h1 Sign UP
+		form(action="/signup", method="post", role="form")
+			.form-group
+				label(for="email") Email: 
+				input.form-control(type="text", name="email", id="email")
+			.form-group
+				label Password:
+				input.form-control(type="password", name="password")
+			.form-group
+				label Password again:
+				input.form-control(type="password", name="password2")
+			input(type="submit", value="Sign Up")

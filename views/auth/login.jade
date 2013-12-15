@@ -1,0 +1,9 @@
+extends ../_layout/base
+
+block content
+	.container
+		form(action="/login", method="post")
+			label Email: 
+			input(type="text", name="username")
+			input(type="password", name="password", value="password")
+			input(type="submit", value="Log In")
