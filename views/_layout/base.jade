@@ -15,13 +15,13 @@ html
 				.container
 					ul.messages
 						for msg in messages.success || []
-							li.success= msg
+							li.success!= msg
 						for msg in messages.info || []
-							li.info= msg
+							li.info!= msg
 						for msg in messages.warn || []
-							li.warn= msg
+							li.warn!= msg
 						for msg in messages.error || []
-							li.error= msg
+							li.error!= msg
 
 		block content
 

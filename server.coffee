@@ -14,7 +14,6 @@ GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 
 settings = 	require './settings'
 database = 	require './database'
-schema = 	require './schema'
 models = 	require './models'
 routes = 	require './routes'
 
@@ -50,6 +49,16 @@ app.use (req, res, next) ->
 	user = req.user
 	res.locals.user = user
 	next()
+
+routes.setup app, conn, passport
+
+app.use (req, res) ->
+	res.render('404.jade')
+  
+app.use (error, req, res, next) ->
+	res.status(500)
+	res.render('500.jade')
+
 # app.set 'views', __dirname + '/views'
 # app.engine 'jade', require('jade').__express
 
@@ -84,4 +93,3 @@ passport.deserializeUser (id, done) ->
 	models.User.findById id, (err, user) ->
 		done null, user
 
-routes.setup app, conn, passport

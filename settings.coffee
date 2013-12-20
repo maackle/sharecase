@@ -2,6 +2,8 @@
 _ = require 'lodash'
 
 settings = 
-	hi: 'hi'
+	constants:
+		RADIUS_EARTH_KM: 6371
+		MILES_PER_KM: 0.621371
 
 module.exports = _.extend settings, (require './local/settings')

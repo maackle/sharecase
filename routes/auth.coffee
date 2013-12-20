@@ -31,6 +31,7 @@ exports.setup = (app, conn, passport) ->
 			models.User.create
 				email: email
 				password: password
+				geo: [122.6819, -45.5200]
 			, (err, user) ->
 				req.flash 'success', 'You have signed up!  Now log in.'
 				res.redirect '/login'

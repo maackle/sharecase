@@ -1,0 +1,18 @@
+extends _layout/base
+
+mixin item(item)
+	li 
+		| #{ item.obj.name } 
+		| (#{ item.dis.toPrecision(2) } miles)
+
+block content
+	.container
+		h1 dash board!
+
+		h2 nearby requests
+		for request in requestsNear
+			+item(request)
+
+		h2 nearby offers
+		for offer in offersNear
+			+item(offer)

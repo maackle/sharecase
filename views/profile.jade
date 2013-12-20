@@ -6,23 +6,27 @@ block content
 
 		form(method="post")
 			.row
-				.col-md-6
+				.col-sm-6
 					.form-group
 						label Email address
-						input.form-control
+						input.form-control(name="email", value=user.email)
 			.row
-				.col-md-6
+				.col-sm-3
 					.form-group
-						label Full Name
-						input.form-control
+						label First Name
+						input.form-control(name="firstName", value=user.firstName)
+				.col-sm-3
+					.form-group
+						label Family Name
+						input.form-control(name="lastName", value=user.lastName)
 			.row
 				.col-md-2.col-sm-2
 					.form-group
 						label Latitude
-						input.form-control.align-right
+						input.form-control.align-right(name="latitude", value=user.geo[1])
 				.col-md-2.col-sm-2
 					.form-group
 						label Longitude
-						input.form-control.align-right
+						input.form-control.align-right(name="longitude", value=user.geo[0])
 
 			input(type="submit", value="Update")

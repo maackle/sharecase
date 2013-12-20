@@ -1,5 +1,27 @@
 extends _layout/base
 
+mixin request(r)
+	li
+		.name= r.name
+		.controls
+			a(href="/requests/#{r.id}/edit") 
+				span.glyphicon.glyphicon-edit
 block content
 	.container
 		h1 requests
+		h2 add one
+		form(method="post")
+			.form-group
+				label(for="name") Name
+				input.form-control(name="name")
+			.form-group
+				label(for="description") Description
+				textarea.form-control(name="description")
+			input(type="submit")
+
+		h2 your requests
+		for r in userRequests
+			+request(r)
+		h2 all requests
+		for r in allRequests
+			+request(r)
